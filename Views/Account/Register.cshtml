@@ -1,0 +1,59 @@
+﻿@model SMS_WebApplication.ViewModel.RegisterUserViewModel
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">REGISTER ACCOUNT</h5>
+
+                    <form asp-controller="Account" asp-action="Register" method="post">
+                        <div class="mb-3">
+                            <label for="FirstName" class="form-label">First Name</label>
+                            <span class="text-danger" asp-validation-for="FirstName"></span>
+                            <input type="text" id="FirstName" class="form-control" placeholder="Enter your first name..." asp-for="FirstName" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="LastName" class="form-label">Last Name</label>
+                            <span class="text-danger" asp-validation-for="LastName"></span>
+                            <input type="text" id="LastName" class="form-control" placeholder="Enter your last name..." asp-for="LastName" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Email Address</label>
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                            <input type="email" id="Email" class="form-control" placeholder="Enter your email address..." asp-for="Email" />
+                        </div>
+
+                        <div class="form-group" hidden>
+                            <label for="UserName" class="form-label">Username</label>
+                            <span class="text-danger" asp-validation-for="UserName"></span>
+                            <input type="text" id="UserName" class="form-control" placeholder="Enter your email..." asp-for="UserName" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">Password</label>
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                            <input type="password" id="Password" class="form-control" placeholder="Enter your password..." asp-for="Password" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                            <input type="password" id="ConfirmPassword" class="form-control" placeholder="Confirm your password..." asp-for="ConfirmPassword" />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 5px;">Register</button>
+                            <a href="#" class="btn btn-secondary" style="width: 100%; margin-top: 5px;">CANCEL</a>
+                        </div>
+
+                        <p class="text-center mt-3">
+                            Already have an account? Click <a asp-action="Login">here</a>!
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

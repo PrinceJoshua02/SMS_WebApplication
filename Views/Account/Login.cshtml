@@ -1,0 +1,43 @@
+﻿@model SMS_WebApplication.ViewModel.LoginUserViewModel
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">LOGIN TO YOUR ACCOUNT</h5>
+
+                    <form asp-controller="Account" asp-action="Login" method="post">
+                        @if (!ViewData.ModelState.IsValid)
+                        {
+                            <div class="text-danger">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            </div>
+                        }
+
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <span class="text-danger" asp-validation-for="UserName"></span>
+                            <input placeholder="Enter your username..." class="form-control" asp-for="UserName" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" asp-for="Password"></label>
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                            <input placeholder="Enter your password..." class="form-control" asp-for="Password" />
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="submit">LOGIN</button>
+                            <a class="btn btn-secondary" asp-action="Index" asp-controller="Home">CANCEL</a>
+                        </div>
+
+                        <p class="text-center mt-3">
+                            Don't have an account yet? Register <a asp-action="Register">here</a>!
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

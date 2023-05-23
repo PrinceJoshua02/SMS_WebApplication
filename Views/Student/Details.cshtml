@@ -1,0 +1,57 @@
+﻿@model SMS_WebApplication.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="display-4">Details</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Student Details</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                ID:
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-3">
+                First Name:
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.First_Name)
+            </dd>
+            <dt class="col-sm-3">
+                Last Name:
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Last_Name)
+            </dd>
+            <dt class="col-sm-3">
+                Middle Name:
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Middle_Name)
+            </dd>
+            <dt class="col-sm-3">
+                Address:
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt class="col-sm-3">
+                Date of Birth:
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-controller="Student" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">Update</a>
+    <a asp-action="GetAllStudents" class="btn btn-secondary">Back to List</a>
+</div>
